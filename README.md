@@ -1,40 +1,54 @@
 # pyramid
 area of a pyramid
-// Asignment #2
-/*
-Purpose: Calculate the volume of a pyramid, given the base and height.
-//Formula: V=(4/3)  volume calculation
-           
-*/
-using namespace std;
+//Assignment #2
+// calculating the area of a 2 types of pyramids.
+
 #include <iostream>
-#include <cmath>
-int main()
+using namespace std;
+ 
+double pyramid (double a, double b)
 {
-    int type;
-    //double square;
-    double width;
-    double base;        
-    double height;        
-  //  double volume;
-    cout<<"what type of base does the pyramid have?\n";
-    cin>>type;
-    if type=square
- cout<<"enter the width of the base\n";
-        cin>>(width);
-     //   base=width*pow(width,2);
-        if type=triangle;
-    cout<<"enter the width of the base\n";
-    cin>>width;
-    cout<<"enter the height of the base\n";
-    cin>>height;
-    base=width*height;
-  // const double pi=acos(-1);
-     // cout<<"Enter the radius of the pyramid";
-     // cin>>radius;
-//      cout<<"Enter the height of the pyramid";
-  //    cin>>height;
-    //     volume = pi*pow(base,2.)*height;
-      //   cout<<"\nThe volume of the pyramid is "<<volume;
-      system("pause");
+  double pyr_vol;
+  pyr_vol=(4/3)*(b*a);
+  return (pyr_vol);
+}
+
+int main ()
+{
+  char choice;
+  double l,w,h,b;
+  double pyr;
+  cout<<"Choose a polygon: \na-Triangle Pyramid\nb-Square Pyramid"<<endl;
+  cin>>choice;
+  switch (choice)
+  {
+  case 'a':    //begining of triangle base pyramid
+ cout<<"Enter length of base\n";
+ cin>>l;
+ cout<<"Enter width of base\n";
+ cin>>w;
+b=(l*w)/2;     //formula for triangle base
+cout<<"the area of the triangie base is "<<b;
+ cout<<"\nEnter height\n";
+ cin>>h;
+ pyr = (4/3)*(b*h);     //formula to calculate area***************
+ cout << "The volume of the pyramid is "<<pyr;
+ break;
+ case 'b':     //beginning of square base pyramid
+ cout<<"Enter length of base\n";
+ cin>>l;
+ cout<<"Enter width of base\n";
+ cin>>w;
+b=(l*w);
+cout<<"The area of the square base is "<<b;
+ cout<<"\nEnter height\n";
+ cin>>h;
+ pyr = (4/3)*(b*h);    //formula to calculate area*****************
+ cout << "The volume of the pyramid is "<<pyr;
+
+ break;
+ default: 
+ cout<<"Out of coverage"<<endl;
+ }
+  return 0;
 }
